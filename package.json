@@ -1,6 +1,6 @@
 {
   "name": "typescript-mongo-module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Plug & Play Mongo Adapter for a typescript-based backend.",
   "main": "./dist/index.js",
   "repository": "https://github.com/bersling/typescript-mongo-module.git",
