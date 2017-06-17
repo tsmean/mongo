@@ -2,7 +2,7 @@ import * as mongo from 'mongodb';
 import {Db} from 'mongodb';
 import {DatabaseConfig} from './database-config.model';
 
-class Database {
+export class Database {
 
   private _database;
   private _mongoClient;
@@ -42,5 +42,3 @@ class Database {
 }
 
 export const database = new Database();
-
-
