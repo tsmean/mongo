@@ -1,6 +1,5 @@
 import * as mongo from 'mongodb';
 import {database} from './database';
-import {log} from '../logger/logger';
 import {DatabaseResponse} from './database-response.model';
 import {dao} from './dao';
 import {passwordCryptographer} from '../auth/password-cryptographer';

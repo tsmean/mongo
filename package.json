@@ -1,0 +1,19 @@
+{
+  "name": "ts-mongo-module",
+  "version": "1.0.0",
+  "description": "Plug & Play Mongo Adapter for a typescript-based backend.",
+  "main": "index.js",
+  "repository": "https://github.com/bersling/typescript-mongo-module.git",
+  "author": "bersling <bersling@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "mongodb": "^2.2.28"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.0",
+    "@types/mocha": "^2.2.41",
+    "@types/mongodb": "^2.2.6"
+  }
+}

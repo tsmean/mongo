@@ -1,12 +1,9 @@
 import * as mongo from 'mongodb';
 import {database} from './database';
-import {log} from '../logger/logger';
 import {
-  CreateResponse, DatabaseError, DatabaseResponse, DeleteResponse, ReadResponse,
-  UpdateResponse
+  CreateResponse, DatabaseError, DatabaseResponse, ReadResponse, UpdateResponse
 } from './database-response.model';
 import {Cursor, MongoCallback, MongoClient, MongoError} from 'mongodb';
-import {utils} from '../utils/utils';
 
 // Database Access Object
 // Everything that operates directly on the database goes here
