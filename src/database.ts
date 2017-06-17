@@ -8,9 +8,8 @@ class Database {
   private _mongoClient;
 
   private mongoUri = (databaseConfig: DatabaseConfig) => {
-    return `mongodb://${databaseConfig.dbuser}:
-    ${databaseConfig.dbpassword}@${databaseConfig.host}:
-    ${databaseConfig.port}/${databaseConfig.dbname}`;
+    return `mongodb://${databaseConfig.dbuser}` +
+    `:${databaseConfig.dbpassword}@${databaseConfig.host}:${databaseConfig.port}/${databaseConfig.dbname}`;
   }
 
   constructor(

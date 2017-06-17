@@ -1,5 +1,4 @@
 import {database} from './database';
-import {DatabaseConfig} from './database-config.model'
 
 export namespace setupTests {
 
