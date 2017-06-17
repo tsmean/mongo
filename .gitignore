@@ -1,8 +1,6 @@
 # Application Specific #
 ######################
-dist
 #properties
-deploy.config.json
 
 # NodeJS #
 ######################
