@@ -186,7 +186,6 @@ export namespace dao {
     });
   }
 
-
   export function remove(id: string, collectionName: string, cb: (dbResp: DatabaseResponse<any>) => void): void {
     database.database.collection(collectionName, (err, collection) => {
       if (err) {
