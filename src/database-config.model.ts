@@ -1,7 +1,7 @@
 export interface DatabaseConfig {
   host: string;
   dbuser: string;
-  password: string;
+  dbpassword: string;
   dbname: string;
   port: number;
 }

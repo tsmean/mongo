@@ -134,7 +134,7 @@ export namespace dao {
                          cb: (dbResp: DatabaseResponse<CreateResponse>) => void): void {
 
     // deep copy object so input doesn't get mutated
-    const itemCopy = utils.deepCopyData(item);
+    const itemCopy = JSON.parse(JSON.stringify(item));
 
     database.database.collection(collectionName, (err: MongoError, collection) => {
       if (err) {
@@ -187,7 +187,7 @@ export namespace dao {
   }
 
 
-  export function remove(id: string, collectionName: string, cb: (dbResp: DatabaseResponse<DeleteResponse>) => void): void {
+  export function remove(id: string, collectionName: string, cb: (dbResp: DatabaseResponse<any>) => void): void {
     database.database.collection(collectionName, (err, collection) => {
       if (err) {
         cb({
@@ -219,11 +219,11 @@ export namespace dao {
   function morphDataOnRetrieval(data, logme?: boolean) {
 
     if (!data) {
-      log.error('No data!');
+      console.error('No data!');
       return;
     }
 
-    const dataCopy = utils.deepCopyData(data);
+    const dataCopy = JSON.parse(JSON.stringify(data));
 
     const morphResource = (resource): void => {
       if (typeof resource._id !== 'string') {
@@ -246,7 +246,7 @@ export namespace dao {
   };
 
   function morphDataOnStorage(data) {
-    const dataCopy = utils.deepCopyData(data);
+    const dataCopy = JSON.parse(JSON.stringify(data));
     dataCopy._id = data.uid;
     delete dataCopy.uid;
     return dataCopy;

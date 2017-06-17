@@ -1,17 +1,17 @@
 import * as mongo from 'mongodb';
 import {Db} from 'mongodb';
-import {log} from '../logger/logger';
-import {AppProperties} from '../config/app-properties.model';
+import {DatabaseConfig} from './database-config.model';
 
 class Database {
 
   private _database;
   private _mongoClient;
 
-  private mongoUri = (appParams: AppProperties) => {
-    const params = appParams.db;
-    return `mongodb://${params.dbuser}:${params.dbpassword}@${params.host}:${params.port}/${params.dbname}`;
-  };
+  private mongoUri = (databaseConfig: DatabaseConfig) => {
+    return `mongodb://${databaseConfig.dbuser}:
+    ${databaseConfig.dbpassword}@${databaseConfig.host}:
+    ${databaseConfig.port}/${databaseConfig.dbname}`;
+  }
 
   constructor(
 
@@ -23,18 +23,18 @@ class Database {
     return this._database;
   }
 
-  public connectToDatabase (appConfig: AppProperties, callback?: (database: Db) => any) {
+  public connectToDatabase (databaseConfig: DatabaseConfig, callback?: (database: Db) => any) {
 
     // Connect to the db
-    this._mongoClient.connect(this.mongoUri(appConfig), (err, db) => {
+    this._mongoClient.connect(this.mongoUri(databaseConfig), (err, db) => {
       if (!err) {
         this._database = db;
         if (callback) {
           callback(db);
         }
       } else {
-        log.error('Error while connecting to Database:');
-        log.error(err);
+        console.error('Error while connecting to Database:');
+        console.error(err);
       }
     });
 

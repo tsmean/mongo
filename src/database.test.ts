@@ -2,7 +2,7 @@ import * as mocha from 'mocha';
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 import {database} from './database';
-import {beforeEachDo} from '../test/before-eachs';
+import {setupTests} from './testsetup';
 
 chai.use(chaiHttp);
 const expect = chai.expect;
@@ -10,7 +10,7 @@ const expect = chai.expect;
 
 describe('Connect Test', () => {
 
-  beforeEachDo.connectTestToDatabase();
+  setupTests.connectTestToDatabase();
 
   it('should be able to write to db', function(done) {
 

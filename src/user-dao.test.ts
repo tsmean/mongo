@@ -1,13 +1,13 @@
 import * as mocha from 'mocha';
 import * as chai from 'chai';
-import {beforeEachDo} from '../test/before-eachs';
+import {setupTests} from './testsetup';
 import {userDAO} from './user-dao';
 import {User} from './user.model';
 const expect = chai.expect;
 
 describe('UserDAO', () => {
 
-  beforeEachDo.connectTestToDatabase();
+  setupTests.connectTestToDatabase();
 
   it('should be able to create user (only once)', function(done) {
 

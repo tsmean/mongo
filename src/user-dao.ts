@@ -1,16 +1,15 @@
 import * as mongo from 'mongodb';
 import {database} from './database';
-import {DatabaseResponse} from './database-response.model';
+import {DatabaseResponse, ReadResponse} from './database-response.model';
 import {dao} from './dao';
 import {passwordCryptographer} from '../auth/password-cryptographer';
 import {User} from './user.model';
-import {utils} from '../utils/utils';
 
 export namespace userDAO {
 
   export function create(user: User, password: string, cb: (dbResponse: DatabaseResponse) => void) {
 
-    const userCopy = utils.deepCopyData(user);
+    const userCopy = JSON.parse(JSON.stringify(user));
 
     dao.readOneByField('email', userCopy.email, 'users', (dbResp) => {
 
@@ -25,7 +24,6 @@ export namespace userDAO {
           };
           dao.create(userCopy, 'users', cb);
         }, (err) => {
-          log.error(err);
           return cb({
             error: {
               message: 'Problem during hashing'
@@ -45,12 +43,12 @@ export namespace userDAO {
 
   }
 
-  export function getByMail(email: string, cb: (dbResponse: DatabaseResponse) => void) {
+  export function getByMail(email: string, cb: (dbResponse: DatabaseResponse<ReadResponse>) => void) {
     dao.readOneByField('email', email, 'Users', cb);
   }
 
 
-  export function getById(id: string, cb: (dbResponse: DatabaseResponse) => void) {
+  export function getById(id: string, cb: (dbResponse: DatabaseResponse<ReadResponse>) => void) {
     dao.read(id, 'Users', cb);
   }
 

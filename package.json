@@ -8,11 +8,13 @@
   "license": "MIT",
   "dependencies": {
     "chai": "^4.0.2",
+    "immutable": "^3.8.1",
     "mocha": "^3.4.2",
     "mongodb": "^2.2.28"
   },
   "devDependencies": {
     "@types/chai": "^4.0.0",
+    "@types/immutable": "^3.8.7",
     "@types/mocha": "^2.2.41",
     "@types/mongodb": "^2.2.6"
   }
