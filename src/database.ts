@@ -1,6 +1,6 @@
 import * as mongo from 'mongodb';
 import {Db} from 'mongodb';
-import {DatabaseConfig} from './database-config.model';
+import {DatabaseConfig} from '@tsmean/dbadapter';
 
 export class Database {
 

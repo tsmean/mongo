@@ -1,5 +1,5 @@
 import { Db } from 'mongodb';
-import { DatabaseConfig } from './database-config.model';
+import { DatabaseConfig } from '@tsmean/dbadapter';
 export declare class Database {
     private _database;
     private _mongoClient;

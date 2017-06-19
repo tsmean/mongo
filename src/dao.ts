@@ -2,7 +2,7 @@ import * as mongo from 'mongodb';
 import {database} from './database';
 import {
   CreateResponse, DatabaseError, DatabaseResponse, ReadResponse, UpdateResponse
-} from './database-response.model';
+} from '@tsmean/dbadapter';
 import {Cursor, MongoCallback, MongoClient, MongoError} from 'mongodb';
 
 // Database Access Object

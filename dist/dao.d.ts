@@ -1,4 +1,4 @@
-import { CreateResponse, DatabaseResponse, ReadResponse, UpdateResponse } from './database-response.model';
+import { CreateResponse, DatabaseResponse, ReadResponse, UpdateResponse } from '@tsmean/dbadapter';
 export declare namespace dao {
     function read(id: string, collectionName: string, cb: (dbResponse: DatabaseResponse<ReadResponse>) => void): void;
     function readAll(collectionName: string, cb: (dbResponse: DatabaseResponse<ReadResponse[]>) => void): void;

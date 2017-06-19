@@ -2,7 +2,7 @@ import * as mocha from 'mocha';
 import * as chai from 'chai';
 import {dao} from './dao';
 import {setupTests} from './testsetup';
-import {DatabaseResponse, ReadResponse} from './database-response.model';
+import {DatabaseResponse, ReadResponse} from '@tsmean/dbadapter';
 const expect = chai.expect;
 
 describe('DAO', () => {
