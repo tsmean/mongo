@@ -1,5 +1,5 @@
 {
-  "name": "@tsmean/mongo",
+  "name": "tsmongo",
   "version": "1.0.0",
   "description": "Plug & Play Mongo Adapter for a typescript-based backend.",
   "main": "dist/index.js",
