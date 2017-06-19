@@ -2,3 +2,4 @@ export { DatabaseResponse, DatabaseError, ReadResponse, CreateResponse, UpdateRe
 export { DatabaseConfig } from './database-config.model';
 export { dao } from './dao';
 export { setupTests } from './testsetup';
+export { database } from './database';
